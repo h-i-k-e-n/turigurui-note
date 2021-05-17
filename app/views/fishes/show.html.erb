@@ -1,0 +1,39 @@
+    <%= render "shared/fish_header" %>
+    <div class="fish-contents">
+         <div class="fish-main">
+             <div class="contents row">
+                     <div class="content_post"> 
+                        <div class="service-box">
+                          <div class="img-box"><%= image_tag @fish.image ,class: "img"%></div>
+                        </div>
+                     </div>
+                  <div class="content_pos"> 
+                   <ul class="more_list">
+                      <li class='list'>
+                      <h2><%= @fish.name%></h2>
+
+                      <h2> 使用アイテム</h2>
+                      <h4><li><%= @fish.item_a%></li></h4>
+                        <h4><li><%= @fish.item_b%></li></h4>
+                        <h4><li><%= @fish.item_c%></li></h4>
+                    
+                      <h2> メモ</h2>
+                      <h4><li>   <%= @fish.memo%></li></h4><br><br>
+                   </ul>
+                  </div>
+               </div>
+               
+             
+            <div class="fish-new-contents">
+                <div class="fish-btn-content">
+             
+                <%=link_to 'もどる', fishes_path, class:"btn" %> 
+                
+                <%= link_to '編集', edit_fish_path(@fish.id), method: :get , class:"btn"%>
+                 
+                <%= link_to '削除', fish_path(@fish.id), method: :delete , class:"btn"%>
+             </div>
+             
+        </div>
+    </div>
+<%= render "shared/footer_second" %>

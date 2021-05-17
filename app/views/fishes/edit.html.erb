@@ -1,0 +1,57 @@
+<%= render "shared/fish_header" %>
+    <div class="fish-contents">
+      <div class="fish-main">
+       <h2 class="fish-title">アイテムの情報を入力</h2>
+          <%= form_with(model: @fish, local: true) do |f| %>
+
+          <%= render 'shared/error_messages', model: f.object %>
+
+             <div class="img-upload">
+                 <div class="fish-bold-text">
+                      アイテム画像
+                </div>
+                 <div class="fish-click-upload">
+                  <p> クリックしてファイルをアップロード</p>
+                      <%= f.file_field :image, id:"item-image" %>
+                </div>
+            </div>
+ 
+              <div class="new-fishes">
+                  <div class="fish-bold-text">
+                      タイトル
+                  </div>
+                  <%= f.text_area :name, class:"fishes-text", id:"fish-name", placeholder:"タイトルを入力", maxlength:"40" %>
+
+                  <div class="fish-form">
+                      <div class="fish-bold-text">
+                            使用アイテム
+                     </div>
+
+                      <div class="fish-form">
+                        <%= f.collection_select(:item_a, Item.all, :title, :title, { include_blank: '使用アイテム選択'}, {class:"fish-box", id:"item-category"}) %>
+                     </div>
+  
+                      <div class="fish-form">
+                        <%= f.collection_select(:item_b, Item.all, :title, :title, { include_blank: '使用アイテム選択'}, {class:"fish-box", id:"item-category"}) %>
+                      </div>
+ 
+                      <div class="fish-form">
+                        <%= f.collection_select(:item_c, Item.all, :title, :title, { include_blank: '使用アイテム選択'}, {class:"fish-box", id:"item-category"}) %>
+                      </div>
+
+                      <div class="fishes-explain">
+                        <div class="fish-bold-text">
+                          メモ
+                        </div>
+                        <%= f.text_area :memo , class:"fishes-text", id:"fish-info", placeholder:"釣れた場所、釣れた日、サイズ、天気"  ,maxlength:"500" %>
+                     </div>
+                 </div>
+
+                  <div class="fish-btn-contents">
+                    <%= f.submit "変更する" ,class:"fish-btn" %>
+                  </div>
+   
+              </div>
+    <% end %>
+  </div>
+</div>
