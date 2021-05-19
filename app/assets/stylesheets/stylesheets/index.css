@@ -1,0 +1,87 @@
+
+
+.list{
+  text-decoration: none;
+}
+.item{
+  margin: 0 auto;
+}
+
+.item-img-content {
+  position: relative;
+  width: 33vh;
+  height: 33vh;
+  margin: 10px;
+}
+
+.item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+
+}
+
+.item-price {
+    font-size: 1.5vh;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .item-info {
+    background-color: #FFF;
+    color: black;
+    padding: 1vw;
+  }
+
+  .item-inf {
+    margin: 3vh;
+    padding: 1vw;
+    border:solid rgb(109, 109, 109);
+  }
+
+  .column {
+    height: 100%;
+  }
+ 
+  .item-lists {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.item-lis {
+
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+  .a{
+   
+    text-decoration: none;
+  
+  }
+  .item-name {
+    font-size: 2.5vh;
+    text-decoration: none;
+  }
+
+  .checkbox-list input[type="checkbox"] {
+    display: block;
+    width: 10%;
+    
+  }
+  
+  .checkbox-list input[type="checkbox"] + label {
+    display: block;
+    margin-left: 10%;
+    width: 80%;
+    display:block;
+  }
